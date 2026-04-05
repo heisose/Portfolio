@@ -1,0 +1,80 @@
+/* ===== Color Theme ===== */
+:root {
+  --bg-dark: #25303f;
+  --bg-light: #f5f7fa;
+
+  --item-bg: rgba(255, 255, 255, 0.06);
+  --item-border: rgba(255, 255, 255, 0.12);
+  --item-hover: rgba(255, 255, 255, 0.15);
+
+  --text-light: #ffffff;
+  --text-dark: #1a1a1a;
+
+  --transition: 0.25s ease;
+}
+
+/* Auto dark/light */
+body {
+  background: var(--bg-dark);
+  color: var(--text-light);
+}
+
+body.light-mode {
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* ===== Tools Section ===== */
+.tools-section h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+.tools-desc {
+  opacity: 0.9;
+  line-height: 1.7;
+}
+
+.tool-category {
+  margin-bottom: 40px;
+}
+
+.tool-category h5 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+/* ===== Tool Items ===== */
+.tool-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--item-bg);
+  border: 1px solid var(--item-border);
+  padding: 8px 14px;
+  margin: 6px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  transition: transform var(--transition), background var(--transition),
+              box-shadow var(--transition);
+  cursor: default;
+}
+
+/* Hover animation */
+.tool-item:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: var(--item-hover);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* Light mode adjustments */
+body.light-mode .tool-item {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .tool-item:hover {
+  background: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
